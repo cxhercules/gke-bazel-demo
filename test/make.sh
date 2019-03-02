@@ -17,6 +17,10 @@
 # This function checks to make sure that every
 # shebang has a '- e' flag, which causes it
 # to exit on error
+# We are not using -e because of function `check_trailing_whitespace` it depends
+# on not find match, which returns 1.
+set -uo pipefail
+
 function check_bash() {
 find . -name "*.sh" -not -path "./planter/*" | while IFS= read -d '' -r file;
 do
@@ -79,19 +83,28 @@ function check_shell() {
 # file ending in '.java'
 # Download from https://github.com/checkstyle/checkstyle/releases/download/checkstyle-8.15/checkstyle-8.15-all.jar
 function check_java() {
+  # ensure checkstyle available
+  if [ ! -f ~/Downloads/checkstyle-8.15-all.jar ]; then
+     [ ! -d ~/Downloads ] && mkdir ~/Downloads
+     wget -O  ~/Downloads/checkstyle-8.15-all.jar https://github.com/checkstyle/checkstyle/releases/download/checkstyle-8.15/checkstyle-8.15-all.jar
+  fi
+
   echo "Formatting Java"
   find . -name "*.java" -not -path "./planter/*" -exec sh -c \
-    'java -jar ~/Downloads/checkstyle-8.15-all.jar -c /google_checks.xml "$1"'\
+    'java -jar ~/Downloads/checkstyle-8.15-all.jar -c /google_checks.xml "$1"' \
 		-x {} \;
 }
 
 # This function runs the `yarn buildifier` command.
 function check_angular() {
-  echo "Formatting Angular"
-  cd js-client && yarn bazel:format && yarn bazel:lint
-  find src -name "*.ts" -not -path "./node_modules/*" -exec sh -c \
-    '"$(npm bin)"/clang-format -style="Google" -i "$1"' \
-		-x {} \;
+  echo "Not doing Formatting Angular at moment. Bazel intalls both yarn and npm, then we will enable below, but not yet."
+  # cd js-client || exit
+  # yarn install || exit
+  # yarn bazel:format && yarn bazel:lint
+  # which npm || exit
+  # find src -name "*.ts" -not -path "./node_modules/*" -exec sh -c \
+  #   '"$(npm bin)"/clang-format -style="Google" -i "$1"' \
+	# 	-x {} \;
 }
 
 # This function makes sure that there is no trailing whitespace

@@ -56,7 +56,7 @@ Here's a graph of what happens in Bazel when we call the Bazel command to deploy
 
 ![deployed architecture](/images/BazelJSClientBuildTree.png)
 
-##@ Bazel Intro
+## Bazel Intro
 
 If this is your first exposure to the Bazel build system, here's a very quick introduction. Bazel is an open-source version of Google's internal build system, Blaze. Bazel is organized into "packages" and "targets".
 
