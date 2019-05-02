@@ -11,12 +11,10 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+import {Routes, RouterModule} from '@angular/router';
+import { NgModule } from '@angular/core';
 
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-
-export const helloModuleId =
-    './hello-world/hello-world.module#HelloWorldModule';
+export const helloModuleId = './hello-world/hello-world.module#HelloWorldModule';
 export const todosModuleId = './todos/todos.module#TodosModule';
 
 // These are lazy-loaded routes - note that we don't import the modules here
@@ -30,5 +28,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule { }

@@ -11,12 +11,34 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+load("@io_bazel_rules_sass//:defs.bzl", "sass_binary", "sass_library")
+
 package(default_visibility = ["//visibility:public"])
 
-filegroup(
-    name = "image_assets",
-    srcs = [
-        "bazel-navbar.svg",
-        "github-circle-white-transparent.svg",
+sass_library(
+    name = "colors",
+    srcs = ["colors.scss"],
+)
+
+sass_library(
+    name = "fonts",
+    srcs = ["fonts.scss"],
+)
+
+sass_library(
+    name = "shared",
+    srcs = ["shared.scss"],
+    deps = [
+        ":colors",
+        ":fonts",
+    ],
+)
+
+sass_binary(
+    name = "main",
+    src = "main.scss",
+    deps = [
+        ":colors",
+        ":fonts",
     ],
 )

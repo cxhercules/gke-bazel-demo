@@ -11,14 +11,10 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {MatCardModule} from '@angular/material/card';
-import {MatListModule} from '@angular/material/list';
 import {RouterModule} from '@angular/router';
-
 import {MaterialModule} from '../material/material.module';
 
 import {TodosComponent} from './todos.component';
@@ -26,8 +22,7 @@ import {TodosComponent} from './todos.component';
 @NgModule({
   declarations: [TodosComponent],
   imports: [
-    CommonModule, FormsModule, RouterModule, MaterialModule, MatCardModule,
-    MatListModule,
+    CommonModule, FormsModule, RouterModule, MaterialModule,
     RouterModule.forChild([{path: '', component: TodosComponent}])
   ],
 

@@ -11,12 +11,9 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {MatCardModule} from '@angular/material/card';
 import {RouterModule} from '@angular/router';
-
 import {MaterialModule} from '../material/material.module';
 
 import {HelloWorldComponent} from './hello-world.component';
@@ -24,7 +21,7 @@ import {HelloWorldComponent} from './hello-world.component';
 @NgModule({
   declarations: [HelloWorldComponent],
   imports: [
-    FormsModule, RouterModule, MaterialModule, MatCardModule,
+    FormsModule, RouterModule, MaterialModule,
     RouterModule.forChild([{path: '', component: HelloWorldComponent}])
   ],
   exports: [HelloWorldComponent],

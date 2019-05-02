@@ -11,7 +11,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 @import "./fonts";
 @import "./colors";
 
@@ -26,33 +25,36 @@ html, body {
 }
 
 nav > .mat-toolbar {
-  color: $white;
+	background: $theme-secondary;
+	color: #fff;
 
-  .nav-logo {
-    height: 28px;
-  }
+	.nav-logo {
+		padding-top: 12px;
+		height: 28px;
+	}
 
-  .flex-spacer {
-    flex: 1 1 auto;
-  }
+	.flex-spacer {
+		flex: 1 1 auto;
+	}
 
-  a {
-    text-decoration: none;
-  }
+	a {
+		text-decoration: none;
+	}
 }
 
 .mobile-nav > a {
-  flex: 1 1 auto;
+	flex: 1 1 auto;
 }
 
 .hide-small {
-  @media screen and (max-width: 720px) {
-    display: none !important;
-  }
+	@media screen and (max-width: 720px) {
+		display: none !important;
+	}
 }
 
 .show-small {
-  @media screen and (min-width: 720px) {
-    display: none !important;
-  }
+	@media screen and (min-width: 720px) {
+		display: none !important;
+	}
 }
+

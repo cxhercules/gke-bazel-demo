@@ -11,7 +11,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 import {BrowserDynamicTestingModule, platformBrowserDynamicTesting} from '@angular/platform-browser-dynamic/testing';
@@ -20,11 +19,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HelloWorldComponent} from './hello-world.component';
 import {HelloWorldModuleNgSummary} from './hello-world.module.ngsummary';
 
-// TODO(alexeagle): this helper should be in
-// @angular/platform-browser-dynamic/testing
+// TODO(alexeagle): this helper should be in @angular/platform-browser-dynamic/testing
 try {
-  TestBed.initTestEnvironment(
-      BrowserDynamicTestingModule, platformBrowserDynamicTesting());
+  TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
 } catch {
   // Ignore exceptions when calling it multiple times.
 }

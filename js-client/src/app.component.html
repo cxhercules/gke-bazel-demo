@@ -13,24 +13,23 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
-
 <nav>
-  <mat-toolbar class="mat-primary">
-    <a mat-button href="https://bazel.build">
+  <mat-toolbar>
+    <a href="https://bazel.build" class="mat-button">
       <img class="nav-logo" src="/images/bazel-navbar.svg">
     </a>
-    <a mat-button routerLink="/" class="hide-small">Home</a>
-    <a mat-button routerLink="/todos" class="hide-small">Todos</a>
+    <a routerLink="/" class="mat-button hide-small">Home</a>
+    <a routerLink="/todos" class="mat-button hide-small">Todos</a>
     <span class="flex-spacer"></span>
-    <a mat-button href="https://github.com/alexeagle/angular-bazel-example">
+    <a href="https://github.com/alexeagle/angular-bazel-example" class="mat-button">
       <img class="nav-logo" src="/images/github-circle-white-transparent.svg">
     </a>
   </mat-toolbar>
 
-  <mat-toolbar class="mat-primary show-small mobile-nav">
-    <a mat-button routerLink="/">Home</a>
-    <a mat-button routerLink="/todos">Todos</a>
-  </mat-toolbar>
+	<mat-toolbar class="show-small mobile-nav">
+    <a routerLink="/" class="mat-button">Home</a>
+    <a routerLink="/todos" class="mat-button">Todos</a>
+	</mat-toolbar>
 </nav>
 
 <div class="content">

@@ -11,7 +11,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 /**
  * This main entry point is used to launch the app under the
  * @angular-devkit/build-angular, which is the default CLI
@@ -20,9 +19,9 @@
  * platform-browser.
  * This file is completely unused in the Bazel build.
  */
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import {AppModule} from './app.module';
+import { AppModule } from './app.module';
 
-platformBrowserDynamic().bootstrapModule(AppModule).catch(
-    err => console.log(err));
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.log(err));

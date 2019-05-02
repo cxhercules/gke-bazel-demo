@@ -11,7 +11,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
 import { browser, by, element } from 'protractor';
 
 export class AppPage {
@@ -27,7 +26,7 @@ export class AppPage {
   }
 
   async getParagraphText() {
-    return (await this.waitForElement(element(by.id('greeting')))).getText();
+    return (await this.waitForElement(element(by.css('div#greeting')))).getText();
   }
 
   async typeInInput(s: string) {
