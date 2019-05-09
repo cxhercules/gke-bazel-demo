@@ -121,7 +121,7 @@ http_archive(
     name = "angular_material",
     url = "https://github.com/angular/material2/archive/7.1.1.zip",
     strip_prefix = "material2-7.1.1",
-    sha256 = "d3f88aed435f3e1c032736a2f64c61f98790d8c80cb04f4b0b24d1d306317939",
+    sha256 = "a2cba966729d45cb3c21ba8156060e26c433516f5b92a20e3367cd7d9beb795c",
     )
 
 # This local_repository rule is needed to prevent `bazel build ...` from
